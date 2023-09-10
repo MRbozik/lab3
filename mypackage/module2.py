@@ -49,15 +49,13 @@ def LangDetect(text: str, set: str = "all") -> str:
 def LanguageList(out: str = "screen", text: str = None) -> str:
     try:
         df = pd.DataFrame(columns=['№', 'Language', 'ISO-639 code', 'Text'])
-        translator = GoogleTranslator(source='auto')  # Create an instance of GoogleTranslator
+        translator = GoogleTranslator(source='auto')
 
-        supported_languages = translator.get_supported_languages(as_dict=True)  # Call get_supported_languages
-
+        supported_languages = translator.get_supported_languages(as_dict=True)
         for code, name in supported_languages.items():
-            translation = translator.translate(text, target=code)  # Translate using the instance
+            translation = translator.translate(text, target=code)
             new_row = {'№': len(df) + 1, 'Language': name.title(), 'ISO-639 code': code, 'Text': translation}
-            df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)  # Concatenate DataFrames
-
+            df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
         if out == "screen":
             print(df)
             return "Ok"
