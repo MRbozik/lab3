@@ -7,4 +7,4 @@ lang = 'en'
 print(md1.TransLate(text=text, dest=dest))
 print(md1.LangDetect(text=text, set='all'))
 print(md1.CodeLang(lang=lang))
-# md1.LanguageList(out='screen', text=text)
+md1.LanguageList(out='screen', text=text)
