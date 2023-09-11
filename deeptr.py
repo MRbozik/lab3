@@ -7,4 +7,4 @@ lang = 'en'
 print(md2.TransLate(text=text, dest=dest))
 print(md2.LangDetect(text=text, set='all'))
 print(md2.CodeLang(lang=lang))
-print(md2.LanguageList(out='screen', text=text))
+print(md2.LanguageList(out='file', text=text))
